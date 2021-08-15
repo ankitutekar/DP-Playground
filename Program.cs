@@ -20,9 +20,10 @@ namespace DP_Playground
                                     .ToArray();
             Console.WriteLine("Enter total capacity of Knapsack:");
             int totalCapacity = Convert.ToInt32(Console.ReadLine());
-            int totalProfit = BasicKnapsack.BasicKnapsackTopDownMemo(values, weight, totalCapacity);
-
-            Console.WriteLine($"Here is your total profit:{totalProfit}!!! \nPress any key to close:");
+            int totalProfitUsingMemo = BasicKnapsack.BasicKnapsackTopDownMemo(values, weight, totalCapacity);
+            int totalProfitUsingTabulation = BasicKnapsack.BasicKnapsackBottomUpTabulation(values, weight, totalCapacity);
+            Console.WriteLine($"Here is your total profit using memoization:{totalProfitUsingMemo}!!!");
+            Console.WriteLine($"Here is your total profit using tabulation:{totalProfitUsingTabulation}!!! \nPress any key to close:");
             Console.ReadKey();
         }
     }
