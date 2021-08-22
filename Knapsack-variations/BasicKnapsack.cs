@@ -85,12 +85,4 @@ public static class BasicKnapsack
             }
         }
     }
-
-    private static void PrintCache(int[][] cache) {
-        for (int i = 0; i < cache.Length; i++) {
-            for (int j = 0; j < cache[0].Length; j++) {
-                Console.WriteLine($"capacity{i} -> currentIndex{j} = {cache[i][j]}");
-            }
-        }
-    }
 }
