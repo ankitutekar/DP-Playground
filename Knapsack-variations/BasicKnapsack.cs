@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DP_Playground.Helpers;
 
 //Output maximum profit(based on value of selected item)
 //Input value, weight array and target weight(capacity of knapsack)
@@ -8,7 +9,7 @@ public static class BasicKnapsack
     public static int BasicKnapsackTopDownMemo(IList<int> values, IList<int> weight, int capacity)
     {
         int[][] cache = new int[capacity+1][];
-        InitializeCache(cache, values.Count);
+        HelperMethods.InitializeCache(cache, values.Count);
 
         int result =  BasicKnapsackTopDownMemo(values, weight, capacity, values.Count-1, cache);
         //PrintCache(cache);
@@ -68,21 +69,5 @@ public static class BasicKnapsack
         }
 
         return resultsTable[resultsTable.Length-1][resultsTable[0].Length-1];
-    }
-
-    private static void InitializeCache(int[][] cache, int rowSize)
-    {
-        for (int i = 0; i < cache.Length; i++)
-        {
-            cache[i] = new int[rowSize];
-        }
-
-        for (int i = 0; i < cache.Length; i++)
-        {
-            for (int j = 0; j < cache[0].Length; j++)
-            {
-                cache[i][j] = -1;
-            }
-        }
     }
 }
