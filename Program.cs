@@ -27,7 +27,8 @@ namespace DP_Playground
                              .ToArray();
             Console.WriteLine("Enter target sum:");
             var sum = Int32.Parse(Console.ReadLine());
-            Console.WriteLine($"Is it possible to generate target sum with given array??? {SubsetWithGivenSum.SubSetWithGivenSumMemoized(inputArray, sum)}!!!!");
+            Console.WriteLine($"Is it possible to generate target sum with given array??? Memoized solution says {SubsetWithGivenSum.SubSetWithGivenSumMemoized(inputArray, sum)}!!!!");
+            Console.WriteLine($"Is it possible to generate target sum with given array??? Tabulation solution says {SubsetWithGivenSum.SubSetWithGivenSumTabulation(inputArray, sum)}!!!!");
         }
 
         static void RunBasicKnapsack()

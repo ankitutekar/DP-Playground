@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using DP_Playground.Helpers;
 
 namespace DP_Playground.Knapsack_variations
 {
@@ -26,8 +27,9 @@ namespace DP_Playground.Knapsack_variations
                 {
                     if(array[i-1] <= j)
                     {
-                        resultsTable[i][j] = (array[i-1] == j) ||
-                                            resultsTable[i-1][j-array[i - 1]];
+                        resultsTable[i][j] = ((array[i-1] == j) ||
+                                            resultsTable[i-1][j-array[i - 1]])
+                                            || resultsTable[i - 1][j];
                     }
                     else
                     {
